@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  blogwebapi:
+    image: ${DOCKER_REGISTRY-}blogwebapi
+    build:
+      context: .
+      dockerfile: BlogWebApi/Dockerfile
+    # depends_on:
+    #   - mongodb
+    # networks:
+    #   - blogapp-network
+
+  # mongodb:
+  #   image: mongo:7.0.12
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - dbdata:/data/db
+  #   networks:
+  #     - blogapp-network
+
+# volumes:
+#   dbdata:
+
+# networks:
+#   blogapp-network:
+#     driver: bridge  
